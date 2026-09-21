@@ -323,3 +323,31 @@ img { display: block; max-width: 100%; }
   .auth-panel-copy h1 { font-size:44px; }
   .role-grid { grid-template-columns:1fr; }
 }
+
+.auth-alert {
+  margin: 14px 0 4px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.auth-alert-error {
+  background: #fff1f0;
+  border: 1px solid #ffd0cc;
+  color: #9c2b20;
+}
+.auth-alert-success {
+  background: #eef8f2;
+  border: 1px solid #cce8d7;
+  color: #1d6b47;
+}
+.auth-submit:disabled {
+  opacity: .72;
+  cursor: not-allowed;
+}
+.spin-icon {
+  animation: goodkeys-spin .8s linear infinite;
+}
+@keyframes goodkeys-spin {
+  to { transform: rotate(360deg); }
+}
