@@ -2,19 +2,16 @@
 
 import { FormEvent, useState } from "react";
 import Link from "next/link";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { LoaderCircle } from "lucide-react";
 
-export default function LoginForm() {
+export default function LoginForm({ justRegistered = false }: { justRegistered?: boolean }) {
   const router = useRouter();
-  const searchParams = useSearchParams();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
-
-  const justRegistered = searchParams.get("registered") === "1";
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
