@@ -10,6 +10,7 @@
     "db:test": "node scripts/test-db.mjs"
   },
   "dependencies": {
+    "bcryptjs": "latest",
     "dotenv": "latest",
     "lucide-react": "latest",
     "next": "latest",
