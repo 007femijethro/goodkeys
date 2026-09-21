@@ -2,7 +2,13 @@ import Link from "next/link";
 import { ArrowLeft, KeyRound } from "lucide-react";
 import LoginForm from "@/components/LoginForm";
 
-export default function LoginPage() {
+export default async function LoginPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ registered?: string }>;
+}) {
+  const params = await searchParams;
+
   return (
     <main className="auth-page">
       <section className="auth-brand-panel">
@@ -20,7 +26,7 @@ export default function LoginPage() {
       </section>
 
       <section className="auth-form-panel">
-        <LoginForm />
+        <LoginForm justRegistered={params.registered === "1"} />
       </section>
     </main>
   );
