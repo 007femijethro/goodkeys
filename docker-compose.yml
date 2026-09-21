@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: goodkeys-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: goodkeys
+      POSTGRES_USER: goodkeys
+      POSTGRES_PASSWORD: goodkeys
+    ports:
+      - "5433:5432"
+    volumes:
+      - goodkeys_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  goodkeys_postgres_data:
