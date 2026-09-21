@@ -35,7 +35,7 @@ export default function PropertyCard({ property }: { property: Property }) {
           <strong>{formatNaira(property.moveIn)}</strong>
         </div>
 
-        <Link className="card-link" href={"/properties/" + property.id}>View property</Link>
+        <Link className="card-link" href={typeof property.id === "number" ? "/properties" : "/properties/" + property.id}>View property</Link>
       </div>
     </article>
   );
